@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!-- saved from url=(0068)file:///C:/Users/Arisall/Downloads/Qwen_html_20251028_sugdrss2q.html -->
+<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Секретный сайт</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    #secret-input {
+      width: 300px;
+      padding: 4px 8px;
+      font-size: 14px;
+      border: 1px solid transparent;
+      background: transparent;
+      color: transparent;
+      outline: none;
+      margin-bottom: 20px;
+      transition: border-color 0.3s;
+    }
+
+    #secret-input:focus {
+      border-color: #ccc;
+      color: #000;
+    }
+
+    h1 {
+      margin: 10px 0 20px;
+      font-size: 2.5em;
+      color: #333;
+    }
+
+    #image-container {
+      margin: 20px 0;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      max-height: 400px;
+    }
+
+    #message {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #555;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+
+    #welcome-name {
+      margin-top: 15px;
+      font-size: 1.5em;
+      color: #2c7be5;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <input type="text" id="secret-input" placeholder="">
+
+  <h1 id="main-title">Добро пожаловать</h1>
+
+  <div id="image-container">
+    <!-- Замени ссылку на любую фотографию -->
+    <img src="./Секретный сайт_files/7mWLBUQVvKP844bV7ie6WeMecA0XwYf_LbP1OyV9MmQoMh60h7PoC_p8zY3BcDlbGfPg_g.jpg" alt="Фотография">
+  </div>
+
+  <div id="welcome-name"></div>
+  <div id="message">
+    Поздравляем! Вы нашли этот сайт — это уже говорит о вашей наблюдательности и сообразительности.  
+    А ещё вы просто крутой человек. Спасибо, что вы есть!
+  </div>
+
+  <script>
+    const input = document.getElementById('secret-input');
+    const title = document.getElementById('main-title');
+    const welcomeName = document.getElementById('welcome-name');
+    const message = document.getElementById('message');
+
+    const defaultMessage = message.innerHTML;
+
+    input.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        const value = input.value.trim();
+
+        if (value === "Ты думал, что здесь что-то будет?:)") {
+          activateSecret("Добро пожаловать Дмитрий Юрьевич", 
+            "Поздравляю! Вы — настоящий исследователь тайн интернета. Ваше внимание к деталям и настойчивость вдохновляют. Продолжайте удивлять мир!");
+        } 
+        else if (value === "Ты крутой") {
+          activateSecret("Добро пожаловать Дмитрий Юрьевич", 
+            "Вы не просто крутой — вы легенда! Благодаря таким, как вы, мир становится интереснее. Спасибо за вашу уникальность!");
+        }
+      }
+    });
+
+    function activateSecret(nameText, newMessage) {
+      title.textContent = "Вход в систему...";
+      welcomeName.style.display = 'none';
+      message.textContent = ""; // очищаем сообщение
+
+      setTimeout(() => {
+        title.textContent = "Добро пожаловать";
+        welcomeName.textContent = nameText;
+        welcomeName.style.display = 'block';
+        message.textContent = newMessage;
+      }, 5000);
+    }
+  </script>
+
+
+</body></html>
